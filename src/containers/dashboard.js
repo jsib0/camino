@@ -5,6 +5,8 @@ import Today from './dashboard-content/today';
 import Week from './dashboard-content/week';
 import Month from './dashboard-content/month'
 import fetchDashboard from '../actions/index';
+import Interactive from 'react-interactive';
+import $ from 'jquery';
 
 
 
@@ -15,11 +17,20 @@ class Dashboard extends Component  {
 		this.state = {
 			week: 1,
 			today: 0,
-			month: 0 
+			month: 0
 		}
+		
+	}
+
+	componentDidMount() {
+		$('.nav-bar div').click(function (ev) {
+      	 	 $('.nav-bar div').removeClass('selected');
+      	 	 $(ev.currentTarget).addClass('selected');
+    		});
 	}
 
 	render () {
+	
 		return (
 			<div className="main-dashboard">
 				<div className="header" >
@@ -32,15 +43,15 @@ class Dashboard extends Component  {
     		  		</div>
 					<h3 className="header-dashboard-text" > DASHBOARD</h3>
 					<div className="search-icon" ><i className="fa fa-search" aria-hidden="true"></i></div>
-					</div>
+				</div>
 				<div className="nav-bar" >
-					<div className="today-button" onClick={ () => this.setState({ week: 0, today: 1, month: 0})}>Today </div>
-					<div className="week-button" onClick={ () => this.setState({ week: 1, today: 0, month: 0})}> Week</div>
-					<div className="month-button" onClick={ () => this.setState({ week: 0, today: 0, month: 1})}> Month</div>
+					<div className="nav-bar-buttons left-button today-button" onClick={ () => this.setState({ week: 0, today: 1, month: 0, one: 1, two: 0, three: 0 })}><p>Today </p></div>
+					<div className="nav-bar-buttons week-button" onClick={ () => this.setState({ week: 1, today: 0, month: 0, two: 1, one: 0, three: 0})}> <p>Week</p></div>
+					<div className="nav-bar-buttons right-button month-button" onClick={ () => this.setState({ week: 0, today: 0, month: 1, three: 1, one: 0, two: 0})}> <p>Month</p></div>
 				</div>
 				<div>
-					{ this.state.week ? <Week /> : null }
 					{ this.state.today ? <Today /> : null }
+					{ this.state.week ? <Week /> : null }
 					{ this.state.month ? <Month /> : null }
 				</div>
 			</div>

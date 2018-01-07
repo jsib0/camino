@@ -60,20 +60,121 @@
 
 .nav-bar {
 	display: grid;
-	grid-template-columns: auto 30% 30% 30% auto;
+	grid-template-columns: auto 28% 28% 28% auto;
+	grid-template-areas: ". today-button week-button month-button .";
+	justify-items: center;
+	padding-top: 5px;
+	height: 50px;
+	font-family: 'Raleway', sans-serif;
+	color: #FFF1D1;
+	font-weight: 200;
+	text-transform: uppercase;	
+}
+
+.nav-bar-buttons {
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 10px;
+	font-size: .9em;
+	height: 40px;
+	width: 100%;
+	border: 1px solid #FFF1D1;	
+}
+
+.right-button {
+	border-radius: 0 500px 500px 0;
+}
+
+.left-button {
+	border-radius: 500px 0 0 500px;
+}
+
+.today-button {
+	grid-area: today-button;
+}
+
+.week-button {
+	grid-area: week-button;
+}
+
+.month-button {
+	grid-area: month-button;
+}
+
+.selected {
+	background: #FFF1D1;
+	color: rgba(0,0,0,1);
 }
 
 
-
-
-.week-dashboard {
-	outline: 1px solid blue !important;
-}
-
-.today-dashboard {
+/* week component*/
+.week-container {
+	position: relative;
 	outline: 1px solid red;
+	display: grid;
+	height: 83vh;
+	grid-template-rows: 5% 7% 12% 22% 30% 10% auto;
+	grid-template-areas: 
+	"barchart"
+	"orders-completed"
+	"total-sales"
+	"line-graph"
+	"pie-graph"
+	"sales-number"
+	"items";
+
 }
 
-.month-dashboard {
-	outline: 2px solid green;
+#myChart {
+	bottom: 100px;
+	position: relative;
+	width: 170px;
+	top: 25px;
+	margin: 0 auto;
+	grid-area: pie-graph;
 }
+
+.barchart{
+	grid-area: barchart;
+	top: 50%;
+	width: 100%;
+	outline: 1px solid red;
+	
+}
+
+
+.orders-completed{
+	grid-area: orders-completed;
+	outline: 1px solid blue;
+
+}
+
+.total-sales{
+	grid-area: total-sales;
+	outline: 1px solid green;
+}
+
+.line-graph{
+	grid-area: line-graph;
+	outline: 1px solid yellow;
+	z-index: 10;
+}
+
+.pie-graph{
+	grid-area: pie-graph;
+	outline: 1px solid white;
+}
+
+.sales-number{
+	grid-area: sales-number;
+	outline: 1px solid black;
+}
+
+.items{
+	grid-area: items;
+	outline: 1px solid yellow;
+}
+
+
+
