@@ -46,7 +46,7 @@ class Dashboard extends Component  {
 				</div>
 				<div className="nav-bar" >
 					<div className="nav-bar-buttons left-button today-button" onClick={ () => this.setState({ week: 0, today: 1, month: 0, one: 1, two: 0, three: 0 })}><p>Today </p></div>
-					<div className="nav-bar-buttons week-button" onClick={ () => this.setState({ week: 1, today: 0, month: 0, two: 1, one: 0, three: 0})}> <p>Week</p></div>
+					<div className="nav-bar-buttons selected week-button" onClick={ () => this.setState({ week: 1, today: 0, month: 0, two: 1, one: 0, three: 0})}> <p>Week</p></div>
 					<div className="nav-bar-buttons right-button month-button" onClick={ () => this.setState({ week: 0, today: 0, month: 1, three: 1, one: 0, two: 0})}> <p>Month</p></div>
 				</div>
 				<div>

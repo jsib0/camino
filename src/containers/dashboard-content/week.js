@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {core as Core} from 'zingchart-react';
+import {AreaChart} from 'react-easy-chart'
 
 
 
@@ -7,7 +8,6 @@ const  Week =  (props) => {
 	
 		let myConfig = {
 		  "graphset":[
-		    
 		    {	
 		      "type":"pie",
 		      "backgroundColor": "rgba(0,0,0,0)",
@@ -40,9 +40,6 @@ const  Week =  (props) => {
 		          "visible":true
 		        }
 		      },
-
-
-
 		      "series":[
 		        {
 		          "size":"100%", //darker red
@@ -50,20 +47,6 @@ const  Week =  (props) => {
 		          "backgroundColor":"#B75D52",
 		          "borderWidth": 15,
 		          "borderColor":"#B75D52",
-		          "text":"Move",
-		          "tooltip":{
-		              "x":100,    
-		              "y":100,
-		              "width":0,
-		              "fontSize":19,
-		              "padding":0,
-		              "anchor":"c",
-		              "fontFamily":"Lucida Sans Unicode",
-		              "text":"<span style='color:%color'>%plot-text</span><br><span style='font-size:31px;font-weight:bold;color:%color;'>%node-percent-value%</span>", 
-		              "align":"left",
-		              "borderWidth":0,
-		              "backgroundColor":"none",
-		            }
 		        },
 		        { 
 		          "size":"75%", // darker yellow
@@ -71,20 +54,7 @@ const  Week =  (props) => {
 		          "backgroundColor":"#FAD849",
 		          "borderWidth":15,
 		          "borderColor":"#FAD849",
-		          "text":"Exercise",
-		          "tooltip":{
-		              "x":100,    
-		              "y":100,
-		              "width":120,
-		              "fontSize":19,
-		              "padding":30,
-		              "anchor":"c",
-		              "fontFamily":"Lucida Sans Unicode",
-		              "text":"<span style='color:%color'>%plot-text</span><br><span style='font-size:31px;font-weight:bold;color:%color;'>%node-percent-value%</span>",
-		              "align":"left",
-		              "borderWidth":0,
-		              "backgroundColor":"none",
-		            }
+		        
 		        },
 		        {       
 		          "size":"50%", // darker green
@@ -92,21 +62,7 @@ const  Week =  (props) => {
 		          "backgroundColor":"#61D2DB",
 		          "borderWidth": 15,
 		          "borderColor":"#61D2DB",
-		          "text":"Stand",
-
-		          "tooltip":{
-		              "x":130,    
-		              "y":100,
-		              "width":120,
-		              "fontSize":19,
-		              "padding":30,
-		              "anchor":"c",
-		              "fontFamily":"Lucida Sans Unicode",
-		              "text":"<span style='color:%color'>%plot-text</span><br><span style='font-size:31px;font-weight:bold;color:%color;'>%node-percent-value%</span>",
-		              "align":"left",
-		              "borderWidth":0,
-		              "backgroundColor":"none",
-		      },
+		     
 		        }
 		      ],
 		      "shapes":[
@@ -190,19 +146,154 @@ const  Week =  (props) => {
 		  ]
 		};
 
+	let orders =   {
+            "type":"hbar",
+            "font-family":"Arial",
+  			"height":"20%",
+  			"width": '85%',
+            "backgroundColor": "rgba(0,0,0,0)",
+            "plot":{
+                "bars-overlap":"100%",
+                "borderRadius": "100",
+                "hover-state":{
+                    "visible":false
+                },
+             
+            },
+
+            "plotarea":{
+                "margin":"1px 1px 1px 1px"
+            },
+             "gui": { "contextMenu": {
+   	 		   "button": {
+   	 			"visible": false
+   	 			}
+   	 		  }},
+            "scale-x":{
+                "line-color":"none",
+                "values":[""],
+                "tick":{
+                    "visible":false
+                },
+                "guide":{
+                    "visible":false
+                },
+                "item":{
+                    "font-size":"14px",
+                    "padding-right":"20px",
+                    "auto-align":true,
+                    "rules":[
+                        {
+                            "rule":"%i==0",
+                            "font-color":"#FA8452"
+                        }
+                    ]
+                }
+            },
+            "scale-y":{
+                "visible":false,
+                "guide":{
+                    "visible":false
+                }
+            },
+            "series":[
+                {
+                    "values":[100],
+                    "bar-width":"10px",
+                    "background-color":"#5C385B",
+                    "border-color": "#FFF1D1",
+                    "border-width": 1,
+                    "line-style": "solid",
+                    "fill-angle":10,
+                    "tooltip":{
+                        "visible":false
+                    }
+                },
+                {
+                    "values":[40],
+                    "bar-width":"10px",
+                    "max-trackers":0,
+                    "value-box":{
+                        "placement":"top-out",
+                        "text":"%v",
+                        "decimals":0,
+                        "font-color":"red",
+                        "font-size":"0px",
+                        "alpha":0.6
+                    },
+                    "rules":[
+                        {
+                            "rule":"%i==0",
+                            "background-color":"#F08C81"
+                        }
+                    ]
+                }
+            ]
+        };
+
 
 
 	return (
 		<div className="week-container" >
 			<div className="barchart">
-				barchart
+				<Core  id="barchart" height="200" width="350" data={orders} />
 		     </div>
 		     <div className="orders-completed">order</div>
 		     <div className="total-sales">total sales</div>
-		     <div className="line-graph">line graph</div>
+		     <div className="line-graph">
+	         <AreaChart
+			    axes
+			    margin={{top: 10, right: 10, bottom: 50, left: 10}}
+			  	xType={'text'}
+			    width={370}
+			    grid
+			    verticalGrid
+			    interpolate={'cardinal'}
+			    height={150}
+			    noAreaGradient
+			    areaColors={['#FAD849','#B75D52', '#61D2DB']}
+			    data={[
+			     [
+			        { x: '1', y: 0 },
+			        { x: '2', y: 5 },
+			        { x: '3', y: 3 },
+			        { x: '4', y: 4 },
+			        { x: '5', y: 6 },
+			        { x: '6', y: 3 },
+			        { x: '7', y: 2 },
+			        { x: '8', y: 4 },
+			        { x: '9', y: 3 },
+			        { x: '10', y: 0 }
+			      ], [
+			        { x: '1', y: 0 },
+			        { x: '2', y: 1 },
+			        { x: '3', y: 1 },
+			        { x: '4', y: 2 },
+			        { x: '5', y: 3 },
+			        { x: '6', y: 5 },
+			        { x: '7', y: 7 },
+			        { x: '8', y: 8 },
+			        { x: '9', y: 4 },
+			        { x: '10', y: 0 }
+			      ],
+			        [
+			        { x: '1', y: 0 },
+			        { x: '2', y: 3 },
+			        { x: '3', y: 5 },
+			        { x: '4', y: 3 },
+			        { x: '5', y: 4 },
+			        { x: '6', y: 9 },
+			        { x: '7', y: 7 },
+			        { x: '8', y: 4 },
+			        { x: '9', y: 7 },
+			        { x: '10', y: 0 }
+			      ]
+			    ]}
+  			  />
+  			 </div>
 		     <div className="pie-graph">
 
-		     	<Core className="hello" id="myChart" height="155" width="170" data={myConfig} />
+		     	<Core id="pie-graph" height="155" width="170" data={myConfig} />
 
 		     </div>
 		     <div className="sales-number">sales</div>

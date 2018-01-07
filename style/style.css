@@ -126,28 +126,24 @@
 
 }
 
-#myChart {
-	bottom: 100px;
-	position: relative;
-	width: 170px;
-	top: 25px;
-	margin: 0 auto;
-	grid-area: pie-graph;
-}
 
-.barchart{
+
+.barchart #barchart{
 	grid-area: barchart;
-	top: 50%;
-	width: 100%;
-	outline: 1px solid red;
+	
+	
 	
 }
 
+#barchart {
+	height: 40px;
+	width: 300px;
+	margin: 0 auto;
+}
 
 .orders-completed{
 	grid-area: orders-completed;
 	outline: 1px solid blue;
-
 }
 
 .total-sales{
@@ -157,13 +153,17 @@
 
 .line-graph{
 	grid-area: line-graph;
-	outline: 1px solid yellow;
 	z-index: 10;
+	margin: 0 auto;
 }
 
-.pie-graph{
+#pie-graph {
+	bottom: 100px;
+	position: relative;
+	width: 170px;
+	top: 25px;
+	margin: 0 auto;
 	grid-area: pie-graph;
-	outline: 1px solid white;
 }
 
 .sales-number{
