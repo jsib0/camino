@@ -1,9 +1,3 @@
 export default function() {
-
-	return [
-		{ sales: 135 },
-		{ complete_orders: 124},
-
-	]
-
+	return { orders: 135, completed_orders: 124, total_sales: 448.50  }
 }

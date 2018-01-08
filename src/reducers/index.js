@@ -1,13 +1,16 @@
 import { combineReducers } from 'redux';
-import week from './week-reducer';
-import today from './week-reducer';
-import month from './week-reducer';
+import TodayReducer from './today-reducer';
+import WeekReducer from './week-reducer';
+import MonthReducer from './month-reducer';
+import ActiveReducer from './active-reducer';
 
 
 const rootReducer = combineReducers({
-	today: today,
-	week: week,
-	month: month
+	today_reducer: TodayReducer,
+	week_reducer: WeekReducer,
+	month_reducer: MonthReducer,
+	active_reducer: ActiveReducer
+
 
 });
 

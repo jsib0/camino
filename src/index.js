@@ -17,7 +17,6 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 class App extends Component {
 	constructor(props) {
 		super(props);
-
 	}
 
 	render() {

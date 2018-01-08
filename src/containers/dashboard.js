@@ -7,6 +7,8 @@ import Month from './dashboard-content/month'
 import fetchDashboard from '../actions/index';
 import Interactive from 'react-interactive';
 import $ from 'jquery';
+import { fetchWeek } from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 
 
@@ -17,7 +19,8 @@ class Dashboard extends Component  {
 		this.state = {
 			week: 1,
 			today: 0,
-			month: 0
+			month: 0,
+
 		}
 		
 	}
@@ -46,7 +49,7 @@ class Dashboard extends Component  {
 				</div>
 				<div className="nav-bar" >
 					<div className="nav-bar-buttons left-button today-button" onClick={ () => this.setState({ week: 0, today: 1, month: 0, one: 1, two: 0, three: 0 })}><p>Today </p></div>
-					<div className="nav-bar-buttons selected week-button" onClick={ () => this.setState({ week: 1, today: 0, month: 0, two: 1, one: 0, three: 0})}> <p>Week</p></div>
+					<div className="nav-bar-buttons selected week-button"  onClick={ () => this.setState({ week: 1, today: 0, month: 0, two: 1, one: 0, three: 0})}> <p>Week</p></div>
 					<div className="nav-bar-buttons right-button month-button" onClick={ () => this.setState({ week: 0, today: 0, month: 1, three: 1, one: 0, two: 0})}> <p>Month</p></div>
 				</div>
 				<div>
@@ -60,4 +63,8 @@ class Dashboard extends Component  {
 }
 
 
-export default Dashboard;
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ fetchWeek: fetchWeek }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(Dashboard)

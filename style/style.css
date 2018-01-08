@@ -19,7 +19,6 @@
 	margin-top: 20px;
 }
 
-
 .header {
 	display: grid;
 	grid-template-columns: 10% auto 10%;
@@ -59,16 +58,16 @@
 }
 
 .nav-bar {
-	display: grid;
-	grid-template-columns: auto 28% 28% 28% auto;
-	grid-template-areas: ". today-button week-button month-button .";
-	justify-items: center;
-	padding-top: 5px;
-	height: 50px;
-	font-family: 'Raleway', sans-serif;
-	color: #FFF1D1;
-	font-weight: 200;
-	text-transform: uppercase;	
+   display: grid;
+   grid-template-columns: auto 28% 28% 28% auto;
+   grid-template-areas: ". today-button week-button month-button .";
+   justify-items: center;
+   padding-top: 5px;
+   height: 50px;
+   font-family: 'Raleway', sans-serif;
+   color: #FFF1D1;
+   font-weight: 200;
+   text-transform: uppercase;	
 }
 
 .nav-bar-buttons {
@@ -107,14 +106,11 @@
 	color: rgba(0,0,0,1);
 }
 
-
-/* week component*/
 .week-container {
 	position: relative;
-	outline: 1px solid red;
 	display: grid;
 	height: 83vh;
-	grid-template-rows: 5% 7% 12% 22% 30% 10% auto;
+	grid-template-rows: 5% 7% 12% 20% 32% 6% auto;
 	grid-template-areas: 
 	"barchart"
 	"orders-completed"
@@ -123,32 +119,39 @@
 	"pie-graph"
 	"sales-number"
 	"items";
-
 }
-
-
 
 .barchart #barchart{
 	grid-area: barchart;
-	
-	
-	
 }
 
 #barchart {
-	height: 40px;
+	height: 60px;
 	width: 300px;
 	margin: 0 auto;
 }
 
 .orders-completed{
 	grid-area: orders-completed;
-	outline: 1px solid blue;
 }
 
 .total-sales{
 	grid-area: total-sales;
-	outline: 1px solid green;
+	justify-self: center;
+	line-height: 4px;
+	color: #E06E73;
+	font-family: Arial;
+	bottom: 30px;	
+}
+
+.total-sales h3 {
+	font-family: 'Raleway', sans-serif;
+	color: #EBD8BF;
+}
+
+.total-sales p {
+	color: #C56272;
+	font-size:.8em;
 }
 
 .line-graph{
@@ -168,12 +171,89 @@
 
 .sales-number{
 	grid-area: sales-number;
-	outline: 1px solid black;
+	justify-self: center;
+	line-height: 0px;
+	color: #E06E73;
+	font-family: Arial;
+	bottom: 30px;
 }
 
-.items{
+.sales-number h3 {
+	font-family: 'Raleway', sans-serif;
+	color: #EBD8BF;
+}
+
+.sales-number p {
+	font-size: .8em;
+}
+
+.items {
 	grid-area: items;
-	outline: 1px solid yellow;
+	width: 370px;
+	justify-self: center;
+	line-height: 30px;
+	font-family: Arial, sans-serif;
+	font-size: .75em;
+	margin-right: 10px;
+}
+
+table {
+	width: 100%;
+	align-items: right;
+}
+
+table td {
+	padding-left: 30px;
+}
+
+.hoodie-dot {
+	position: absolute;
+	padding-left: 10px;
+	width: 13px;
+	height: 13px !important;
+	background: #FB6660;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin-top: 12px;
+	margin-left: 10px;
+}
+
+.fitted-dot {
+	position: absolute;
+	padding-left: 10px;
+	width: 13px;
+	height: 13px;
+	background: #FFBE31;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin-top: 12px;
+	margin-left: 10px;
+}
+
+.bracelet-dot {
+	position: absolute;
+	padding-left: 10px;
+	width: 13px;
+	height: 13px;
+	background: #00D7DD;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin-top: 12px;
+	margin-left: 10px;
+}
+
+.item-description {
+	color: #F5E3C7;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+}
+
+.item-price {
+	color: #EC7475;
+	font-family: 'PT Sans', sans-serif;
 }
 
 
