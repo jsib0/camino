@@ -25,10 +25,15 @@ class Today extends Component {
 		      "plotarea":{
 		        "margin":"15"
 		      },
-		       "gui": { "contextMenu": {
+		       "gui": { 
+		       	"watermark": {
+		 				"visible": false
+		 		},
+		       	"contextMenu": {
 		 		   "button": {
 		 			"visible": false
-		 			}
+		 			},
+		 			
 		 		  }},
 		      "scale":{
 		        "sizeFactor":1

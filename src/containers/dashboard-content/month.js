@@ -173,7 +173,12 @@ class Month extends Component {
 	        "plotarea":{
 	            "margin":"1px 1px 1px 1px"
 	        },
-	         "gui": { "contextMenu": {
+	         "gui": { 
+
+	         	"watermark": {
+		 				"position": "bl"
+		 		},
+	         	"contextMenu": {
 		 		   "button": {
 		 			"visible": false
 		 			},
