@@ -28,7 +28,10 @@ class Week extends Component {
 				       "gui": { "contextMenu": {
 				 		   "button": {
 				 			"visible": false
-				 			}
+				 			},
+				 			"watermark": {
+		 				"visible": false
+		 			}
 				 		  }},
 				      "scale":{
 				        "sizeFactor":1

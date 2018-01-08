@@ -176,6 +176,9 @@ class Month extends Component {
 	         "gui": { "contextMenu": {
 		 		   "button": {
 		 			"visible": false
+		 			},
+		 			"watermark": {
+		 				"visible": false
 		 			}
 		 		  }},
 	        "scale-x":{
