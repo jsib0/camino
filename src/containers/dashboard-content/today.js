@@ -16,6 +16,7 @@ class Today extends Component {
 
 	
 	render () {
+		
 		let myConfig = {
 		  "graphset":[
 		    {	

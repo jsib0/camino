@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack -p",
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,8 @@
     "zingchart-react": "^1.0.6"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0"
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "mocha": "^4.1.0"
   }
 }
