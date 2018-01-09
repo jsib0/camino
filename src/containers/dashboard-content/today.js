@@ -59,14 +59,14 @@ class Today extends Component {
 		      "series":[
 		        {
 		          "size":"100%", //darker red
-		          "values":[70],
+		          "values":[90],
 		          "backgroundColor":"#B75D52",
 		          "borderWidth": 15,
 		          "borderColor":"#B75D52",
 		        },
 		        { 
 		          "size":"75%", // darker yellow
-		          "values":[40],
+		          "values":[70],
 		          "backgroundColor":"#FAD849",
 		          "borderWidth":15,
 		          "borderColor":"#FAD849",
@@ -74,7 +74,7 @@ class Today extends Component {
 		        },
 		        {       
 		          "size":"50%", // darker green
-		          "values":[70],
+		          "values":[45],
 		          "backgroundColor":"#61D2DB",
 		          "borderWidth": 15,
 		          "borderColor":"#61D2DB",
@@ -277,7 +277,7 @@ class Today extends Component {
 		    };	
 
 		return (
-			<div className="week-container" >
+			<div className="second-container" >
 				<div className="barchart">
 					<Core  id="barchart" height="200" width="350" data={orders} />
 			     </div>

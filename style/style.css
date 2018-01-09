@@ -1,12 +1,30 @@
 *{ box-sizing:  border-box; };
 
-
-.container {}
-.container {
+html, body {
+	min-height: 100% !important;
+	min-width: 360px !important;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
 	overflow: hidden;
 	position: relative;
-	height: 100vh;
+}
+
+.container {
+	/*overflow: hidden;*/
+	/*position: relative;*/
+	min-height: 100% !important; 
+	min-width: 360px;
+	margin: 0;
+	padding: 0;
 	background: radial-gradient(#7E4B70	,#462C4D);
+
+}
+
+#the-division {
+	min-width: 370px;
+	min-height: 100%;
+	z-index: 10;
 }
 
 .header-dashboard-text {
@@ -59,6 +77,7 @@
 
 .nav-bar {
    display: grid;
+   min-width: 370px;
    grid-template-columns: auto 28% 28% 28% auto;
    grid-template-areas: ". today-button week-button month-button .";
    justify-items: center;
@@ -106,11 +125,21 @@
 	color: rgba(0,0,0,1);
 }
 
-.week-container {
+.main-dashboard {
+	display: grid;
+	grid-template-columns: auto: 
+	height: 100%;
+	min-width: 370px;
+
+}
+
+.second-container {
+	grid-area: second-container;
 	position: relative;
 	display: grid;
-	height: 83vh;
-	grid-template-rows: 5% 7% 12% 20% 32% 6% auto;
+	min-width: 370px;
+	min-height: 100%;`
+	grid-template-rows: auto auto auto auto auto auto auto%;
 	grid-template-areas: 
 	"barchart"
 	"orders-completed"
@@ -119,6 +148,7 @@
 	"pie-graph"
 	"sales-number"
 	"items";
+	justify-items: center;
 }
 
 .barchart #barchart{
@@ -127,7 +157,7 @@
 
 #barchart {
 	height: 60px;
-	width: 300px;
+	width: 300px;`
 	margin: 0 auto;
 }
 
@@ -156,17 +186,16 @@
 
 .line-graph{
 	grid-area: line-graph;
-	z-index: 10;
-	margin: 0 auto;
+	position: relative;
+	left: -1px;
+	width: 375px;
 }
 
 #pie-graph {
-	bottom: 100px;
-	position: relative;
 	width: 170px;
-	top: 25px;
 	margin: 0 auto;
 	grid-area: pie-graph;
+
 }
 
 .sales-number{
@@ -175,7 +204,7 @@
 	line-height: 0px;
 	color: #E06E73;
 	font-family: Arial;
-	bottom: 30px;
+	height: 50px;
 }
 
 .sales-number h3 {
@@ -194,7 +223,8 @@
 	line-height: 30px;
 	font-family: Arial, sans-serif;
 	font-size: .75em;
-	margin-right: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
 }
 
 table {

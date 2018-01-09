@@ -275,7 +275,7 @@ class Week extends Component {
 				    };
 			
 			return (
-					<div className="week-container" >
+					<div className="second-container" >
 						<div className="barchart">
 							<Core  id="barchart" height="200" width="350" data={orders} />
 					     </div>

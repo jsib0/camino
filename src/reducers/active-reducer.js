@@ -13,7 +13,6 @@ export default function(state=null, action) {
 
 		case 'MONTH_SELECTED':
 			return action.payload;
-
 	}
 
 	return state

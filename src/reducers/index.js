@@ -10,8 +10,6 @@ const rootReducer = combineReducers({
 	week_reducer: WeekReducer,
 	month_reducer: MonthReducer,
 	active_reducer: ActiveReducer
-
-
 });
 
 export default rootReducer;
