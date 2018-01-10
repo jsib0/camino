@@ -14,6 +14,8 @@ First, clone the repository from gitHub and run npm install.
 
 git clone https://github.com/sibalajp/camino.git
 
+cd camino
+
 npm install
 
 ```
