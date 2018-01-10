@@ -10,17 +10,17 @@ To view this project, simply visit the site's url: http://caminoapp.herokuapp.co
 
 First, clone the repository from gitHub and run npm install.
 
-,,,
+```
 
 git clone https://github.com/sibalajp/camino.git
 
 npm install
 
-,,,
+```
 
 Next, start the server
 
-,,,
+```
 
 npm run start
 
@@ -28,7 +28,7 @@ or
 
 npm run dev 
 
-,,,
+```
 
 
 ## Deployment
@@ -37,20 +37,20 @@ This is deployed through Heroku and the server.js is set up to their specificati
 
 To deploy, we need to run npm postinstall for webpack to bundle chages (is any). To do this simply run: 
 
-,,,
+```
 
 npm run postinstall
 
-,,,
+```
 
 
 ## Built With
 
 * [React](https://reactjs.org/) - The library used for UI
 
-* [Redux] (https://redux.js.org/) - The libary used in managing state
+* [Redux](https://redux.js.org/) - The libary used in managing state
 
-* [jQuery] (https://jquery.com/) - The libary used for the navbar 
+* [jQuery](https://jquery.com/) - The libary used for the navbar 
 
 * [ZingChart](https://www.zingchart.com/gallery/) - The node module used for the pie and bar graph
 
